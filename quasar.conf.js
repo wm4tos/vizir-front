@@ -63,6 +63,7 @@ module.exports = ctx => ({
     ],
     directives: [
       'Ripple',
+      'CloseOverlay',
     ],
     // Quasar plugins
     plugins: [
