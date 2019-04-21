@@ -5,20 +5,21 @@ export default ({ Vue, app }) => {
   Vue.prototype.$axios = axios;
   axios.defaults.baseURL = 'http://localhost:3000/';
   axios.interceptors.request.use((req) => {
-    if (app.store.getters.GetLoading) {
-      Loading.show();
+    const loading = app.store.getters.GetLoading;
+    if (loading !== {}) {
+      Loading.show(loading);
     }
 
     return req;
   }, (err) => {
     Loading.hide();
-    app.store.dispatch('SET_LOADING', false);
+    app.store.dispatch('SET_LOADING', {});
     Promise.reject(err);
   });
 
   axios.interceptors.response.use(({ data }) => {
     Loading.hide();
-    app.store.dispatch('SET_LOADING', false);
+    app.store.dispatch('SET_LOADING', {});
     switch (data.status) {
       case 200:
         return data.data;
@@ -30,7 +31,7 @@ export default ({ Vue, app }) => {
     }
   }, (error) => {
     Loading.hide();
-    app.store.dispatch('SET_LOADING', false);
+    app.store.dispatch('SET_LOADING', {});
 
     return Promise.reject(error.response.data);
   });
