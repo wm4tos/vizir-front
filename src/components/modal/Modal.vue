@@ -1,7 +1,6 @@
 <template>
   <q-modal
     :value="value"
-    content-css="min-width: 30vw; min-height: 50vh"
     @input="e => $emit('input', e)">
     <q-modal-layout>
       <q-toolbar slot="header">
@@ -23,3 +22,5 @@
 </template>
 
 <script src="./Modal.js"/>
+
+<style lang="stylus" src="./Modal.styl" />
