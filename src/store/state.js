@@ -1,4 +1,4 @@
 export default {
   origin: '',
-  loading: false,
+  loading: {},
 };
