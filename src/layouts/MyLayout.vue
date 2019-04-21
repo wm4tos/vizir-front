@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-layout-header class="q-pa-md row justify-center gutter-sm">
+    <q-layout-header class="q-pa-md row justify-center">
       <div class="col-xs-12 col-md-6 col-xl-4">
         <q-select
           v-model="originValue"
