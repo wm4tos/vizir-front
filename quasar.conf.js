@@ -4,6 +4,7 @@ module.exports = ctx => ({
   // app plugins (/src/plugins)
   plugins: [
     'axios',
+    'vue-currency-filter',
   ],
   css: [
     'app.styl',
