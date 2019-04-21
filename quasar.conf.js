@@ -61,6 +61,7 @@ module.exports = ctx => ({
       'QTable',
       'QTr',
       'QTd',
+      'QAutocomplete',
     ],
     directives: [
       'Ripple',
