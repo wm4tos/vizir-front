@@ -7,6 +7,18 @@
           :options="options"
           float-label="Selecione a origem da ligação"
         />
+        <q-input
+          v-show="originValue"
+          v-model="timeValue"
+          float-label="Você deseja fazer uma ligação de quanto tempo (em minutos)?"
+          type="number"
+        />
+        <q-select
+          v-show="timeValue"
+          v-model="planValue"
+          float-label="Qual plano você deseja consultar?"
+          :options="optionsPlan"
+        />
       </div>
     </q-layout-header>
     <q-page-container>
