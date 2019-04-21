@@ -22,10 +22,19 @@ export default ({ Vue, app }) => {
     app.store.dispatch('SET_LOADING', {});
     switch (data.status) {
       case 200:
+        if (data.message) {
+          Notify.create({
+            icon: 'check',
+            message: data.message,
+            color: 'light-green',
+          });
+        }
         return data.data;
       default:
         Notify.create({
+          icon: 'warning',
           message: data.message,
+          color: 'red-9',
         });
         return Promise.reject(new Error());
     }
