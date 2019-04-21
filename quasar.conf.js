@@ -55,6 +55,8 @@ module.exports = ctx => ({
       'QItemMain',
       'QItemSide',
       'QSelect',
+      'QInput',
+      'QTable',
     ],
     directives: [
       'Ripple',
