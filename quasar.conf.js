@@ -5,6 +5,7 @@ module.exports = ctx => ({
   plugins: [
     'axios',
     'vue-currency-filter',
+    'vue-the-mask',
   ],
   css: [
     'app.styl',
