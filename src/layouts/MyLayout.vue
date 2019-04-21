@@ -1,10 +1,13 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-layout-header class="q-pa-md row justify-center">
-      <q-select
-        class="col-xs-12 col-md-6 col-xl-4"
-        v-model="originValue"
-        :options="options"/>
+    <q-layout-header class="q-pa-md row justify-center gutter-sm">
+      <div class="col-xs-12 col-md-6 col-xl-4">
+        <q-select
+          v-model="originValue"
+          :options="options"
+          float-label="Selecione a origem da ligação"
+        />
+      </div>
     </q-layout-header>
   </q-layout>
 </template>
@@ -13,11 +16,10 @@
 import { mapGetters } from 'vuex';
 
 export default {
-  data() {
-    return {
-      options: [],
-    };
-  },
+  data: () => ({
+    options: [],
+    calls: [],
+  }),
   computed: {
     ...mapGetters({
       origin: 'GetOrigin',
@@ -32,17 +34,19 @@ export default {
     },
   },
   methods: {
-    async GetOptions() {
+    async GetCalls() {
+      this.$store.dispatch('SET_LOADING', { message: 'Carregando opções...' });
       try {
-        const options = await this.$axios.get('calls');
-        this.options = options.map(x => ({ label: x.origin, value: x._id }));
+        const calls = await this.$axios.get('calls');
+        this.options = calls.map(x => ({ label: `DDD: ${x.origin}`, value: x._id }));
+        this.calls = calls;
       } catch (err) {
         throw new Error(err);
       }
     },
   },
   created() {
-    this.GetOptions();
+    this.GetCalls();
   },
 };
 </script>
