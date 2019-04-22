@@ -7,7 +7,7 @@ export default {
     options: [],
     calls: [],
     optionsPlan: [],
-    editOrigin: true,
+    editOrigin: false,
   }),
   components: {
     Calls,
