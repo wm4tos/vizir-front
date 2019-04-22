@@ -48,6 +48,7 @@
       <router-view />
     </q-page-container>
     <calls
+      v-if="editOrigin"
       v-model="editOrigin"
       @input="ResetOptions"
     />
