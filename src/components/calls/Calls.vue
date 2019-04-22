@@ -5,7 +5,7 @@
     <form
       class="row gutter-y-md"
       @submit.prevent="SaveCall"
-      @reset="origin = '', destinys = [{ price: 0, destiny: '' }], call = {}"
+      @reset="ResetData(true)"
     >
       <div class="row justify-center col-12">
         <q-input
@@ -33,13 +33,16 @@
           <div class="col-xs-12 col-sm-6">
             <q-input
               v-model="item.destiny"
-              float-label="Destino"/>
+              float-label="Destino"
+              type="tel"
+              v-mask="'##'"/>
           </div>
           <div class="col-xs-12 col-sm-6">
             <q-input
               v-model="item.price"
               v-money="money"
-              float-label="Valor"/>
+              float-label="Valor"
+              type="tel"/>
           </div>
         </div>
       </div>
