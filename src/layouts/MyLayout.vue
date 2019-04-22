@@ -35,6 +35,11 @@
           round
           icon="edit"
           class="q-mt-md"
+          @click="$q.notify({
+            icon: 'sentiment_very_dissatisfied',
+            message: 'Opa! Essa função ainda não tá funcionando... \nDesculpa :( Mas quem sabe na próxima atualização, né?', /* eslint-disable-line */
+            color: 'red-9'
+          })"
         />
       </div>
     </q-layout-header>
