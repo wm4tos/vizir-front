@@ -3,8 +3,9 @@
     :value="value"
     @input="ResetData">
     <form
-      class="row gutter-y-md none-action"
+      class="row gutter-y-md"
       @submit.prevent="SaveCall"
+      @reset="origin = '', destinys = [{ price: 0, destiny: '' }], call = {}"
     >
       <div class="row justify-center col-12">
         <q-input
@@ -66,5 +67,3 @@
 </template>
 
 <script src="./Calls.js" />
-
-<style lang="stylus" src="./Calls.styl">
