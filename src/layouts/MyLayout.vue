@@ -37,7 +37,8 @@
           class="q-mt-md"
           @click="$q.notify({
             icon: 'sentiment_very_dissatisfied',
-            message: 'Opa! Essa função ainda não tá funcionando... \nDesculpa :( Mas quem sabe na próxima atualização, né?', /* eslint-disable-line */
+            message:( 'Opa! Essa função ainda não tá funcionando...' +
+            '\nDesculpa :( Mas quem sabe na próxima atualização, né?'),
             color: 'red-9'
           })"
         />
