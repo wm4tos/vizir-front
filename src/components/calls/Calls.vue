@@ -11,7 +11,7 @@
         <q-input
           class="col-xs-12 col"
           v-model="origin"
-          float-label="Escolha a origem da ligação"
+          float-label="Escolha o DDD de origem da ligação"
           v-mask="'##'"
           type="tel"
         >
@@ -33,7 +33,7 @@
           <div class="col-xs-12 col-sm-6">
             <q-input
               v-model="item.destiny"
-              float-label="Destino"
+              float-label="DDD do destino"
               type="tel"
               v-mask="'##'"/>
           </div>
