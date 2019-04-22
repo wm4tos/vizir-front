@@ -3,7 +3,7 @@
     :value="value"
     @input="ResetData">
     <form
-      class="row gutter-y-md"
+      class="row gutter-y-md none-action"
       @submit.prevent="SaveCall"
     >
       <div class="row justify-center col-12">
@@ -66,3 +66,5 @@
 </template>
 
 <script src="./Calls.js" />
+
+<style lang="stylus" src="./Calls.styl">
