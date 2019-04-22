@@ -56,11 +56,11 @@ export default {
       }));
     },
     ResetData(e) {
-      this.$emit('input', e);
+      this.origin = '';
+      this.destinys = [{ price: 0, destiny: '' }];
+      this.call = {};
       if (!e) {
-        this.origin = '';
-        this.destinys = [{ price: 0, destiny: '' }];
-        this.call = {};
+        this.$emit('input', e);
       }
     },
   },
