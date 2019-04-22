@@ -2,7 +2,7 @@
   <q-page>
     <div v-if="origin && time && plan">
       <q-table
-        class="bg-white"
+        class="bg-white gt-sm"
         :data="table"
         :columns="columns"
       >
@@ -27,6 +27,37 @@
           </q-td>
         </q-tr>
       </q-table>
+      <div class="lt-md">
+        <card
+          class="q-mb-md"
+          v-for="(data, index) in table"
+          :key="index"
+        >
+          <div
+            class="row gutter-y-md gutter-x-xs"
+            v-for="column in columns"
+            :key="column.field"
+          >
+            <div class="col-6">
+              <h6 class="text-right no-margin"> {{ `${column.label}:` }} </h6>
+            </div>
+            <div class="col-6">
+              <h6
+                class="text-left no-margin text-weight-regular"
+                v-if="column.field === 'priceWith' || column.field == 'priceWithout'"
+              >
+                {{ data[column.field] | currency }}
+              </h6>
+              <h6
+                class="text-left no-margin text-weight-regular"
+                v-else
+              >
+                {{ data[column.field] }}
+              </h6>
+            </div>
+          </div>
+        </card>
+      </div>
     </div>
   </q-page>
 </template>

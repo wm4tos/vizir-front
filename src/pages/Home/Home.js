@@ -1,4 +1,5 @@
 import { mapGetters } from 'vuex';
+import Card from 'components/card/Card.vue';
 
 export default {
   data: () => ({
@@ -24,6 +25,9 @@ export default {
       },
     ],
   }),
+  components: {
+    Card,
+  },
   computed: {
     ...mapGetters({
       origin: 'GetOrigin',
