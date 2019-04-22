@@ -33,7 +33,7 @@ export default {
         } else {
           await this.$axios.post('call', req);
         }
-        this.$emit('input', false);
+        this.ResetData(false);
       } catch (err) {
         throw new Error(err);
       }
