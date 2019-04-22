@@ -1,12 +1,17 @@
 
 import { mapGetters } from 'vuex';
+import Calls from '../components/calls/Calls.vue';
 
 export default {
   data: () => ({
     options: [],
     calls: [],
     optionsPlan: [],
+    editOrigin: true,
   }),
+  components: {
+    Calls,
+  },
   computed: {
     ...mapGetters({
       origin: 'GetOrigin',
@@ -56,6 +61,15 @@ export default {
         this.optionsPlan = plans.map(x => ({ label: x.name, value: x._id }));
       } catch (err) {
         throw new Error(err);
+      }
+    },
+    ResetOptions(e) {
+      if (!e) {
+        this.GetCalls();
+        this.GetPlans();
+        this.originValue = '';
+        this.timeValue = '';
+        this.planValue = '';
       }
     },
   },
