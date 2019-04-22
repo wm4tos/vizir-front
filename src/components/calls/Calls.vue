@@ -12,7 +12,8 @@
           class="col-xs-12 col"
           v-model="origin"
           float-label="Escolha a origem da ligação"
-          :v-mask="'##'"
+          v-mask="'##'"
+          type="tel"
         >
           <q-autocomplete
             @search="SearchOrigin"
