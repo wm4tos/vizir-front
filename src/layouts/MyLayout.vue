@@ -8,13 +8,15 @@
           float-label="Selecione a origem da ligação"
           class="col-10"
         />
-        <q-btn
-          flat
-          round
-          icon="edit"
-          class="q-mt-md"
-          @click="editOrigin = true"
-        />
+        <div class="col-2 flex justify-center">
+          <q-btn
+            flat
+            round
+            icon="edit"
+            class="q-mt-md"
+            @click="editOrigin = true"
+          />
+        </div>
         <q-input
           v-show="originValue"
           v-model="timeValue"
@@ -29,19 +31,21 @@
           :options="optionsPlan"
           class="col-10"
         />
-        <q-btn
-          v-show="timeValue"
-          flat
-          round
-          icon="edit"
-          class="q-mt-md"
-          @click="$q.notify({
-            icon: 'sentiment_very_dissatisfied',
-            message:( 'Opa! Essa função ainda não tá funcionando...' +
-            '\nDesculpa :( Mas quem sabe na próxima atualização, né?'),
-            color: 'red-9'
-          })"
-        />
+        <div class="col-2 flex justify-center">
+          <q-btn
+            v-show="timeValue"
+            flat
+            round
+            icon="edit"
+            class="q-mt-md"
+            @click="$q.notify({
+              icon: 'sentiment_very_dissatisfied',
+              message:( 'Opa! Essa função ainda não tá funcionando...' +
+              '\nDesculpa :( Mas quem sabe na próxima atualização, né?'),
+              color: 'red-9'
+            })"
+          />
+        </div>
       </div>
     </q-layout-header>
     <q-page-container>
